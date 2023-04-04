@@ -6,7 +6,7 @@ const puppeteer = require("puppeteer");
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 
 (async () => {
-  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const client = new Client({
     authStrategy: new LocalAuth(),
   });
@@ -32,11 +32,13 @@ const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
       message.reply("pong");
     }
   });
+
   client.on("message", (message) => {
     if (message.body === "Hi") {
       message.reply("Hello");
     }
   });
+
   client.on("message", (message) => {
     if (message.body === "Help") {
       message.reply("What are you want ?");
@@ -86,5 +88,5 @@ const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
       }
   });
 
-  await client.initialize();
+  client.initialize();
 })();
