@@ -11,6 +11,8 @@
     "wwebjs-mongo": "^1.1.0"
   },
   "scripts": {
+    "start": "npm install puppeteer@latest"
     "start": "node index.js"
+    
   }
 }
