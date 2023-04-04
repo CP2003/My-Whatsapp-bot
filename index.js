@@ -2,6 +2,7 @@ const qrcode = require("qrcode-terminal");
 const axios = require("axios");
 const fs = require("fs");
 const mime = require("mime-types");
+const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const client = new Client({
