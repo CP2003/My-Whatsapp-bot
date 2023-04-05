@@ -40,6 +40,47 @@ client.on("message", (message) => {
   }
 });
 
+client.on("message", async (message) => {
+  if (message.body === "Info") {
+    let chat = await message.getChat();
+    if (chat.isGroup) {
+      message.reply(`
+...........................................................
+                🔰Group Information🔰
+...........................................................
+
+🔱 Group  Name             : ${chat.name}
+
+🔱 Group  Description      : ${chat.description}
+
+🔱 Group  Created At       : ${chat.createdAt.toString()}
+
+🔱 Group  Created By       : ${chat.owner.user}
+
+🔱 Group  Participant count: ${chat.participants.length}
+
+                  `);
+    } else {
+      let info = client.info;
+      client.sendMessage(
+        message.from,
+        `
+...........................................................
+              🔰Chat Information🔰
+...........................................................
+
+
+🔱 My  Name     :  ${info.pushname}
+
+🔱 My  Number   :  ${info.me.user}
+
+🔱 Jid          : ${info.me.user}@c.us
+              `
+      );
+    }
+  }
+});
+
 client.on("message", (message) => {
   if (message.body === "Sticker")
     if (message.hasMedia) {
