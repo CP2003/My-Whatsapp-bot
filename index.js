@@ -4,7 +4,6 @@ const fs = require("fs");
 const mime = require("mime-types");
 const puppeteer = require('puppeteer-firefox');
 
-const browser = await puppeteer.launch({ product: 'firefox' });
 
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const client = new Client({
