@@ -1,13 +1,4 @@
 
-
-  async funtion handler(){
-  const browser = await chromium.puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath,
-    headless: chromium.headless,
-    ignoreHTTPSErrors: ture
-  });
     
 const qrcode = require("qrcode-terminal");
 const axios = require("axios");
