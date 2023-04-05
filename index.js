@@ -1,6 +1,6 @@
 
 
-export async funtion handler(){
+  async funtion handler(){
   const browser = await chromium.puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
