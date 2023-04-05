@@ -1,4 +1,4 @@
-import chromium from '@sparticuz/chromium';
+
 
 export async funtion handler(){
   const browser = await chromium.puppeteer.launch({
