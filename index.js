@@ -4,6 +4,7 @@ const fs = require("fs");
 const mime = require("mime-types");
 const puppeteer = require('puppeteer-firefox');
 
+const client = new Client({ puppeteer: { headless: true,args: ['--no-sandbox', '--disable-setuid-sandbox']}, session: sessionCfg });
 
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const client = new Client({
